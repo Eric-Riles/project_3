@@ -12,10 +12,13 @@ extern char **environ;
 char *allowed[N] = {"cp","touch","mkdir","ls","pwd","cat","grep","chmod","diff","cd","exit","help"};
 
 int isAllowed(const char*cmd) {
-	// TODO
 	// return 1 if cmd is one of the allowed commands
 	// return 0 otherwise
-	
+	for(int i = 0; i < N; i++){
+		if(strcmp(cmd, allowed[i])==0){
+			return 1;
+		}
+	}
 	return 0;
 }
 
